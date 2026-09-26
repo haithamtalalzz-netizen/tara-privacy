@@ -1,0 +1,408 @@
+<title>سياسة خصوصية طارة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+  /* Tara's own identity: the navy the app is painted in, and the gold of its
+     wordmark. Cairo is the typeface the app itself renders in. */
+  :root {
+    color-scheme: light;
+    --ink:      #0B1B33;
+    --body:     #2A3447;
+    --muted:    #6B7686;
+    --paper:    #FAF8F4;
+    --card:     #FFFFFF;
+    --rule:     #E4E0D8;
+    --gold:     #A8831B;
+    --gold-soft:#F3E6C4;
+    --ar: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ink:      #F2F5FA;
+      --body:     #C6CEDC;
+      --muted:    #8C97A8;
+      --paper:    #0A1524;
+      --card:     #10203A;
+      --rule:     #1E3454;
+      --gold:     #E3BC55;
+      --gold-soft:#1C2E17;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ink:      #F2F5FA;
+    --body:     #C6CEDC;
+    --muted:    #8C97A8;
+    --paper:    #0A1524;
+    --card:     #10203A;
+    --rule:     #1E3454;
+    --gold:     #E3BC55;
+    --gold-soft:#1C2E17;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--body);
+    font-family: var(--ar);
+    line-height: 1.85;
+    padding-inline: 20px;
+    padding-block: 0 72px;
+  }
+  .wrap { max-width: 680px; margin-inline: auto; }
+
+  /* ── masthead ───────────────────────────────────────────────── */
+  header { padding-block: 44px 8px; }
+  .mark {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  h1 {
+    font-size: clamp(28px, 6vw, 40px);
+    font-weight: 800;
+    color: var(--ink);
+    margin: 10px 0 6px;
+    text-wrap: balance;
+    line-height: 1.25;
+  }
+  .updated {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  /* ── language switch ────────────────────────────────────────── */
+  .langs { display: flex; gap: 8px; margin-block: 22px 30px; }
+  .langs button {
+    font-family: var(--ar);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .langs button[aria-pressed="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+  .langs button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* ── the one sentence the whole policy is about ─────────────── */
+  .thesis {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--gold);
+    border-radius: 4px;
+    padding: 22px 24px;
+    margin-block: 0 40px;
+  }
+  .thesis p { margin: 0; font-size: 17.5px; font-weight: 600; color: var(--ink); }
+  .thesis .sub { margin-top: 10px; font-size: 14.5px; font-weight: 400; color: var(--body); }
+
+  /* ── sections ───────────────────────────────────────────────── */
+  section { border-top: 1px solid var(--rule); padding-block: 26px 4px; }
+  h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+  h2 .n {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold);
+    flex: none;
+  }
+  section p { margin: 0 0 12px; font-size: 15px; }
+  section ul { margin: 0 0 12px; padding-inline-start: 20px; }
+  section li { font-size: 15px; margin-bottom: 6px; }
+
+  /* ── what actually leaves the device ────────────────────────── */
+  .leaves { margin-block: 8px 16px; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: start; padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; }
+
+  .contact {
+    font-family: var(--mono);
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--gold-soft);
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 4px;
+    user-select: all;
+    direction: ltr;
+  }
+  footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 34px;
+    padding-top: 20px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  [dir="ltr"] { text-align: left; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="mark">Tara · طارة</div>
+    <h1 id="h-ar">سياسة الخصوصية</h1>
+    <h1 id="h-en" hidden dir="ltr">Privacy Policy</h1>
+    <div class="updated" id="u-ar">آخر تحديث: ٢٦ سبتمبر ٢٠٢٦</div>
+    <div class="updated" id="u-en" hidden dir="ltr">Last updated: 26 September 2026</div>
+  </header>
+
+  <div class="langs">
+    <button id="btn-ar" aria-pressed="true">عربى</button>
+    <button id="btn-en" aria-pressed="false">English</button>
+  </div>
+
+  <!-- ═══════════════════ العربية ═══════════════════ -->
+  <div id="ar">
+    <div class="thesis">
+      <p>التطبيق لا يجمع عنك أى بيانات. لا يوجد حساب، ولا سيرفر، ولا مزامنة.</p>
+      <p class="sub">كل ما تكتبه يبقى على تليفونك وحده.</p>
+    </div>
+
+    <section>
+      <h2><span class="n">01</span> مقدمة</h2>
+      <p>تطبيق «طارة» (Tara) يساعدك على إدارة مركباتك وصيانتها ومصروفاتها ومستنداتها فى مكان واحد. أهمّ ما فى هذه السياسة سطرٌ واحد: التطبيق لا يجمع عنك أى بيانات، ولا يوجد حساب، ولا سيرفر، ولا مزامنة. كل ما تكتبه يبقى على تليفونك وحده.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">02</span> البيانات التى نجمعها</h2>
+      <p>لا نجمع شيئًا. ليس لدينا سيرفر نستقبل عليه بياناتك، ولا حساب تسجّل به، ولا بريد إلكترونى ولا كلمة سر.</p>
+      <p>ما يحفظه التطبيق — على تليفونك وحده — هو ما تُدخِله أنت: بيانات المركبة وسجلات الصيانة والإصلاح والوقود والمخالفات والتأمين والتراخيص والمصروفات والتذكيرات والملاحظات، والصور والمستندات التى تلتقطها أو تختارها، وبيانات السائقين التى تضيفها. لا يصل منها شىء إلينا ولا إلى أى جهة.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">03</span> كيف نستخدم بياناتك</h2>
+      <p>تُستخدم بياناتك داخل تليفونك فقط: لعرض سجلاتك وحساب مصروفاتك وإحصائياتك وإطلاق التذكيرات فى مواعيدها. لا إعلانات، ولا تتبّع، ولا بيع، ولا تحليلات — لأن لا شىء يخرج من الجهاز أصلًا.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">04</span> أين تُحفظ بياناتك</h2>
+      <p>فى مساحة التطبيق الخاصة داخل تليفونك، التى لا يقرؤها تطبيقٌ آخر. وحمايتها هى حمايةُ تليفونك نفسه: قفل الشاشة، وقفل التطبيق بالبصمة أو برقم سرى إن فعّلته من الإعدادات.</p>
+      <p>النسخة الاحتياطية ملفٌّ تصنعه أنت وتقرّر أين تضعه. إن أرسلته إلى واتساب أو بريد أو سحابة، فهو يخضع بعدها لشروط تلك الخدمة لا لنا. ولأن البيانات على الجهاز وحده: لو ضاع التليفون أو حُذف التطبيق بلا نسخةٍ احتياطية، فلا يمكن لأحد — ولا لنا — استرجاعها.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">05</span> مشاركة البيانات</h2>
+      <p>لا نشارك شيئًا، لأننا لا نملك شيئًا نشاركه. لا يخرج شىء من تليفونك إلا حين تطلب أنت ذلك بنفسك:</p>
+      <ul>
+        <li>«احفظ مكان الركن» أو «أقرب خدمة» يفتح خرائط جوجل على إحداثيات تختارها.</li>
+        <li>أزرار الاتصال والواتساب تفتح التطبيق المعنى برقمٍ تختاره.</li>
+        <li>مشاركة نسخةٍ احتياطية أو تقريرٍ تُرسله أنت إلى من تريد.</li>
+      </ul>
+      <p>فى كلِّ حالةٍ منها تغادر البيانات جهازك بضغطةٍ منك، وإلى الجهة التى تختارها.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">06</span> خدمات الطرف الثالث</h2>
+      <p>التطبيق يعمل بلا إنترنت، ولا يطلب من نفسه أى طلبٍ عبر الشبكة، عدا أمرين تتولّاهما جوجل:</p>
+      <div class="leaves">
+        <table>
+          <thead>
+            <tr><th>ما هو</th><th>ما الذى يصل</th><th>متى</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>خطوط الواجهة</td>
+              <td>ما يصل جوجل من أى طلبٍ على الإنترنت (عنوان الـIP). لا شىء من بياناتك.</td>
+              <td>أول تشغيل، ثم تُحفظ على الجهاز</td>
+            </tr>
+            <tr>
+              <td>قراءة الإيصالات</td>
+              <td>لا شىء — القراءة تتم على الجهاز، وجوجل بلاى تنزّل النموذج مع التثبيت.</td>
+              <td>مع التثبيت</td>
+            </tr>
+            <tr>
+              <td>الإدخال الصوتى</td>
+              <td>الصوت، إلى مُتعرِّف أندرويد — وعلى كثيرٍ من الأجهزة يعنى ذلك خوادم جوجل.</td>
+              <td>حين تضغط الميكروفون أنت</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>لا تستعمل الميكروفون إن لم ترغب فى ذلك؛ التطبيق يعمل كاملًا بدونه.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">07</span> مدة الاحتفاظ بالبيانات</h2>
+      <p>طالما التطبيق مثبَّتٌ على تليفونك. حذفُ التطبيق يحذف كلَّ بياناته من الجهاز، ولا تبقى نسخةٌ عند أحد — فلا وجود لنسخةٍ عندنا أصلًا. والنسخُ الاحتياطية التى صنعتها تبقى حيث وضعتَها أنت.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">08</span> حقوقك</h2>
+      <p>بياناتك فى يدك بالكامل من البداية: تراها وتعدّلها وتصدّرها وتحذفها من داخل التطبيق متى شئت، بلا إذنٍ من أحد وبلا طلبٍ يُرسَل إلينا. ولا يوجد «حساب» تطلب حذفه، لأنه لا يوجد حساب.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">09</span> خصوصية الأطفال</h2>
+      <p>التطبيق غير موجّه للأطفال دون ١٣ عامًا. ولأننا لا نجمع أى بيانات من أى مستخدم، فلا توجد بيانات أطفالٍ لدينا لنحذفها.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">10</span> تعديلات على السياسة</h2>
+      <p>قد نحدّث هذه السياسة من حينٍ لآخر. التحديثُ يظهر داخل التطبيق وعلى هذه الصفحة، ويسرى من تاريخ نشره.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">11</span> التواصل</h2>
+      <p>لأى استفسار بخصوص الخصوصية راسلنا على:</p>
+      <p><span class="contact">taraappsupport3@gmail.com</span></p>
+    </section>
+
+    <footer>هذه هى نفس السياسة المعروضة داخل التطبيق: الإعدادات ← المساعدة والدعم ← سياسة الخصوصية.</footer>
+  </div>
+
+  <!-- ═══════════════════ English ═══════════════════ -->
+  <div id="en" hidden dir="ltr">
+    <div class="thesis">
+      <p>The app collects nothing about you. There is no account, no server and no sync.</p>
+      <p class="sub">Everything you type stays on your phone.</p>
+    </div>
+
+    <section>
+      <h2><span class="n">01</span> Introduction</h2>
+      <p>Tara helps you keep your vehicles, their maintenance, costs and documents in one place. The important line in this policy is one sentence: the app collects nothing about you. There is no account, no server and no sync. Everything you type stays on your phone.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">02</span> Data we collect</h2>
+      <p>None. We have no server to receive it, no account for you to create, no email address and no password.</p>
+      <p>What the app stores — on your phone only — is what you enter: vehicle details, maintenance, repairs, fuel, violations, insurance, licences, expenses, reminders and notes, the photos and documents you take or pick, and the drivers you add. None of it reaches us or anybody else.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">03</span> How we use your data</h2>
+      <p>Your data is used on your phone and nowhere else: to show your records, work out your costs and statistics, and raise your reminders on time. No ads, no tracking, no selling, no analytics — nothing leaves the device to begin with.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">04</span> Where your data is stored</h2>
+      <p>In the app's private storage on your phone, which no other app can read. Its protection is your phone's own: the screen lock, plus the app lock (fingerprint or a code) if you turn it on in Settings.</p>
+      <p>A backup is a file you create and place where you choose. If you send it to a chat app, an email or a cloud drive, it is then covered by that service's terms, not ours. Because the data lives only on the device: if the phone is lost or the app is uninstalled without a backup, nobody — including us — can recover it.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">05</span> Data sharing</h2>
+      <p>We share nothing, because we hold nothing. Nothing leaves your phone unless you ask for it yourself:</p>
+      <ul>
+        <li>"Where I parked" and "nearest service" open Google Maps at coordinates you chose.</li>
+        <li>The call and WhatsApp buttons open those apps with a number you chose.</li>
+        <li>Sharing a backup or a report sends it to whoever you pick.</li>
+      </ul>
+      <p>In each case the data leaves on your tap, and goes where you send it.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">06</span> Third-party services</h2>
+      <p>The app works offline and makes no network request of its own, apart from two things Google handles:</p>
+      <div class="leaves">
+        <table>
+          <thead>
+            <tr><th>What</th><th>What reaches them</th><th>When</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Interface fonts</td>
+              <td>What any web request reveals (your IP address). None of your data.</td>
+              <td>First launch, then cached on the device</td>
+            </tr>
+            <tr>
+              <td>Receipt scanning</td>
+              <td>Nothing — it runs on the device; Google Play installs the model with the app.</td>
+              <td>At install</td>
+            </tr>
+            <tr>
+              <td>Voice input</td>
+              <td>The audio, to Android's own recognizer — which on many devices means Google's servers.</td>
+              <td>Only when you press the microphone</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Don't use the microphone if you would rather it did not; everything else works without it.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">07</span> Data retention</h2>
+      <p>For as long as the app is installed. Uninstalling it deletes all of its data from the device, and no copy remains anywhere — there was never one with us. Backups you made stay wherever you put them.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">08</span> Your rights</h2>
+      <p>Your data is entirely in your hands from the start: view it, edit it, export it and delete it inside the app whenever you like, with nobody's permission and no request sent to us. There is no "account" to ask us to delete, because there is no account.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">09</span> Children's privacy</h2>
+      <p>The app is not directed at children under 13. And since we collect no data from any user, we hold no child's data to delete.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">10</span> Changes to this policy</h2>
+      <p>We may update this policy from time to time. The update appears inside the app and on this page, and takes effect from the date it is published.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">11</span> Contact</h2>
+      <p>For privacy questions, contact us at:</p>
+      <p><span class="contact">taraappsupport3@gmail.com</span></p>
+    </section>
+
+    <footer>This is the same policy shown inside the app: Settings → Help &amp; support → Privacy policy.</footer>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var parts = {
+      ar: [document.getElementById('ar'), document.getElementById('h-ar'), document.getElementById('u-ar')],
+      en: [document.getElementById('en'), document.getElementById('h-en'), document.getElementById('u-en')]
+    };
+    var buttons = { ar: document.getElementById('btn-ar'), en: document.getElementById('btn-en') };
+
+    function show(lang) {
+      var other = lang === 'ar' ? 'en' : 'ar';
+      parts[lang].forEach(function (el) { el.hidden = false; });
+      parts[other].forEach(function (el) { el.hidden = true; });
+      buttons[lang].setAttribute('aria-pressed', 'true');
+      buttons[other].setAttribute('aria-pressed', 'false');
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    }
+
+    buttons.ar.addEventListener('click', function () { show('ar'); });
+    buttons.en.addEventListener('click', function () { show('en'); });
+
+    // Arabic is the app's own language, so it is what the page opens on;
+    // an English-reading visitor is one tap away.
+    show(document.documentElement.lang === 'en' ? 'en' : 'ar');
+  })();
+</script>
